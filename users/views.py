@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from .forms import LoginForm 
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required 
 # Create your views here.
 
 def user_login(request):
@@ -22,3 +23,7 @@ def user_login(request):
 def logout_view(request):
     logout(request)
     return render(request,'users/logout.html')
+
+@login_required
+def index(request):
+    return render(request,'users/index.html')
