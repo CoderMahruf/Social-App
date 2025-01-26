@@ -24,6 +24,6 @@ def logout_view(request):
     logout(request)
     return render(request,'users/logout.html')
 
-@login_required
+@login_required 
 def index(request):
     return render(request,'users/index.html')
