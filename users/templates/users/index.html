@@ -2,5 +2,10 @@
 
 {% block content %}
     <h1>Home page for user app</h1>
+    {% for post in posts %}
+    <h1>{{post.title}}</h1>
+    <h2>{{post.user}}</h2>
+    <img src="{{post.image.url}}" alt="">
+    {% endfor %}
 {% endblock content %}
     
