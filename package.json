@@ -1,0 +1,25 @@
+{
+  "name": "socialproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tailwind build users/static/users/tw.css -o users/static/users/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoderMahruf/Social-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CoderMahruf/Social-App/issues"
+  },
+  "homepage": "https://github.com/CoderMahruf/Social-App#readme",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
+  }
+}
