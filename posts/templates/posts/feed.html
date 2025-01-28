@@ -29,7 +29,7 @@
                 <img class="w-7 h-7" src="{% static 'users/images/share.png'%}" alt="">
             </div>
         </div>
-        <div>
+        <div class=" py-0.5">
             {% if post.liked_by.count < 1 %}
             {% elif post.liked_by.count == 1 %}
             {{post.liked_by.first}} Like this
@@ -40,6 +40,24 @@
         <div class="px-6 py-3">
             <div class="font-semibold text-xl mb-1">{{post.title}}</div>
             <p class="text-gray-700 text-base">{{post.caption}}</p>
+        </div>
+        <div class="px-5 py-0.5">
+            {% for comment in post.comments.all %}
+            <b>{{comment.posted_by}}</b>:{{comment.body}}
+            <br>
+            {% endfor %}
+        </div>
+        <div class="px-5 py-5">
+            <form method="POST" class="bg-white rounded">
+                {% csrf_token %}
+                <div class="flex">
+                    <div class=" border rounded mr-10 text-grey-700">
+                        {{comment_form.body}}
+                    </div>
+                    <input type="hidden" name="post_id" id="post_id" value="{{post.id}}">
+                    <button class="bg-green-500 rounded text-white px-5 py-2" type="submit">Add</button>
+                </div>
+            </form>
         </div>
     </a>
     <!-- Card ends here  -->
